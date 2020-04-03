@@ -2,12 +2,18 @@ function animatedForm(){
 	const arrows = document.querySelectorAll (".fa-arrow-down");
 
 	arrows.forEach(arrow => {
+		//submit from enter
+
+		arrow.addEventListener('keydown', (event) => {
+			if (event.keyCode === 13)
+				arrow.click();
+		});
 		//submit from click
 		arrow.addEventListener('click', () => {
 			const input = arrow.previousElementSibling;
 			const parent = arrow.parentElement;
 			const nextForm = parent.nextElementSibling;
-
+			
 		//Check for validation
 			if (input.type === "text" && validateUser(input)) {
 				nextSlide(parent, nextForm);
