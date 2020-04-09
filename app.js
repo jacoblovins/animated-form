@@ -4,8 +4,9 @@ function animatedForm(){
 	arrows.forEach(arrow => {
 		//submit from enter
 		arrow.addEventListener('onkeydown', (event) => {
-			if (event.keyCode === 13)
+			if (event.keyCode === 13){
 				whenClicked();
+			}
 		});
 		//submit from click
 		arrow.addEventListener('click', function whenClicked() {
