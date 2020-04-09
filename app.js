@@ -3,13 +3,12 @@ function animatedForm(){
 
 	arrows.forEach(arrow => {
 		//submit from enter
-
-		arrow.addEventListener('keydown', (event) => {
+		arrow.addEventListener('onkeydown', (event) => {
 			if (event.keyCode === 13)
-				arrow.click();
+				whenClicked();
 		});
 		//submit from click
-		arrow.addEventListener('click', () => {
+		arrow.addEventListener('click', function whenClicked() {
 			const input = arrow.previousElementSibling;
 			const parent = arrow.parentElement;
 			const nextForm = parent.nextElementSibling;
