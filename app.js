@@ -1,13 +1,21 @@
 function animatedForm(){
 	const arrows = document.querySelectorAll (".fa-arrow-down");
 
-	arrows.forEach(arrow => {
-		//submit from enter
-		arrow.addEventListener('onkeydown', (event) => {
-			if (event.keyCode === 13){
-				whenClicked();
+	//submit from enter
+
+	  document.onkeydown = function (event) {
+	  	if (event.keyCode === 13){
+	  		console.log('enter pressed');
+				for(var i = 0; i < arrows.length; i++) {
+					arrows[i].click();
+				}
 			}
-		});
+	  };
+
+
+
+	arrows.forEach(arrow => {
+
 		//submit from click
 		arrow.addEventListener('click', function whenClicked() {
 			const input = arrow.previousElementSibling;
